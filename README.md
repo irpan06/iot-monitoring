@@ -40,7 +40,8 @@ The system operates in a continuous loop across three layers:
   - **Device History:** Device-specific performance timeline and CSV export options.  
 
 ### Data Flow Summary
-![Data Workflow][assets/]
+
+![Data Workflow](assets/data%20workflow.png)
 
 ## Technology Stack
 
