@@ -3,6 +3,10 @@
 ## Overview
 This project demonstrates an end-to-end data monitoring and analytics pipeline designed for hospital IoT devices. It integrates real-time data ingestion, database management, automated incident handling, and an interactive visualization dashboard. The system simulates IoT devices transmitting their operational status to an API service, which stores and processes the information in a PostgreSQL database. A Streamlit dashboard provides real-time monitoring, alerting, and ticket management for maintenance and IT support teams.
 
+## Demo
+
+[![Demo](https://img.youtube.com/vi/AkrfGcptu_U/0.jpg)](https://youtu.be/AkrfGcptu_U)
+
 ---
 
 ## Objective
