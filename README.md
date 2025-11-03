@@ -19,27 +19,28 @@ This project aims to emulate a scalable data architecture applicable to smart ho
 ## Workflow and Architecture
 The system operates in a continuous loop across three layers:
 
-1. **Simulation Layer (Data Generation)**  
-   - `simulator.py` generates randomized status data (`online`, `error`, `offline`) for multiple virtual devices.  
-   - Each simulated device periodically sends its status and diagnostic message to the API endpoint.
+### 1. **Simulation Layer (Data Generation)**  
+- `simulator.py` generates randomized status data (`online`, `error`, `offline`) for multiple virtual devices.  
+- Each simulated device periodically sends its status and diagnostic message to the API endpoint.
 
-2. **API & Database Layer (Data Processing)**  
-   - `api.py` receives check-in data through Flask endpoints.  
-   - Operations performed:
-     - Update the `devices` table with the latest status and timestamp.  
-     - Insert historical records into the `device_history` table.  
-     - Automatically open or close tickets in the `tickets` table based on device conditions.  
+### 2. **API & Database Layer (Data Processing)**  
+- `api.py` receives check-in data through Flask endpoints.  
+- Operations performed:
+   - Update the `devices` table with the latest status and timestamp.  
+   - Insert historical records into the `device_history` table.  
+   - Automatically open or close tickets in the `tickets` table based on device conditions.  
    - Data is persisted in **PostgreSQL**, ensuring integrity and efficient querying.
 
-3. **Visualization Layer (Data Presentation)**  
-   - `live_monitor.py` connects to the database and renders a real-time dashboard using **Streamlit**.  
-   - The dashboard includes:
-     - **Monitoring Overview:** Device distribution and health metrics.  
-     - **Active Tickets:** Ongoing incidents with technician assignments and notes.  
-     - **Ticket History:** Historical overview of resolved and active issues.  
-     - **Device History:** Device-specific performance timeline and CSV export options.  
+### 3. **Visualization Layer (Data Presentation)**  
+- `live_monitor.py` connects to the database and renders a real-time dashboard using **Streamlit**.  
+- The dashboard includes:
+   - **Monitoring Overview:** Device distribution and health metrics.  
+  - **Active Tickets:** Ongoing incidents with technician assignments and notes.  
+   - **Ticket History:** Historical overview of resolved and active issues.  
+  - **Device History:** Device-specific performance timeline and CSV export options.  
 
 ### Data Flow Summary
+![Data Workflow][assets/]
 
 ## Technology Stack
 
